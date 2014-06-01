@@ -382,7 +382,7 @@ var is_decreasing = function(seq) {
 ```
 
 
-## Problem 21 - Integer prime factorization
+## Integer prime factorization
 
 Given an integer `n`, we can factor it in the following form:
 
