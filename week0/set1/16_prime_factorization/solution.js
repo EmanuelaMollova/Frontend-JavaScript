@@ -15,7 +15,6 @@ var findHowManyTimesIsDivisor = function(divisor, n) {
     }
 
     return [divisor, count];
-
 };
 
 var findPrimeDivisors = function(n) {
