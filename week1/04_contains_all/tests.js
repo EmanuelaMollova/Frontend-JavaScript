@@ -2,7 +2,7 @@
 
 var containsAll = require("./solution").containsAll;
 
-exports.testForArraysWithTheElement = function(test) {
+exports.testForArraysWithAllElements = function(test) {
     test.deepEqual(true, containsAll([1, 2, 3], [1, 2, 3, 4, 5]));
     test.deepEqual(
         true,
@@ -12,7 +12,7 @@ exports.testForArraysWithTheElement = function(test) {
     test.done();
 };
 
-exports.testForArraysWithoutTheElement = function(test) {
+exports.testForArraysWithoutAllElements = function(test) {
     test.deepEqual(false, containsAll([5], [1, 2, 3]));
     test.deepEqual(false, containsAll([1, 2, 3], [1, 2]));
     test.done();

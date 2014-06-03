@@ -2,7 +2,7 @@
 
 var groupBy = require("./solution").groupBy;
 
-exports.testForArraysWithTheElement = function(test) {
+exports.testGroupBy = function(test) {
     var
         array1  = [1, -2, 5],
         result1 = groupBy(function(x) {
@@ -24,4 +24,3 @@ exports.testForArraysWithTheElement = function(test) {
     test.deepEqual(object2, result2);
     test.done();
 };
-
