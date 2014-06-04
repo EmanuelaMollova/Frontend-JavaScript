@@ -1,6 +1,6 @@
 "use strict";
 
-// It doesn't work for objects and I refuse to inmplement it!
+// It doesn't work for objects and I refuse to implement it!
 var containsAll = function(elements, arr) {
     return elements.every(function(element) {
         return contains(element, arr);
