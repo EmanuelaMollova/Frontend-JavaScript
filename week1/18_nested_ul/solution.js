@@ -3,8 +3,6 @@
 var SPACES_FOR_TAB = 2;
 
 var ul = function(items) {
-    // console.log(printList(0, 'ul', items));
-    // console.log("-----------------------");
     return printList(0, 'ul', items);
 };
 
