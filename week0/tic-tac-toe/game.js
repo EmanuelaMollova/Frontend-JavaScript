@@ -32,15 +32,20 @@ function getSecondaryDiagonal(board) {
 }
 
 function getTripples(board) {
-    return getRows(board).concat(getColumns(board)).concat(getMainDiagonal(board)).concat(getSecondaryDiagonal(board));
+    return getRows(board).concat(getColumns(board))
+        .concat(getMainDiagonal(board)).concat(getSecondaryDiagonal(board));
 }
 
 function isWinner(playerSign, board) {
     var tripples = getTripples(board);
-    // console.log(tripples);
+    console.log(tripples);
+
 
     return tripples.some(function(tripple) {
         tripple.every(function(element) {
+            console.log(tripple);
+            // console.log(element + ' === ' + playerSign);
+            // console.log(element === playerSign);
             return element === playerSign;
         });
     });
@@ -110,5 +115,6 @@ function gameLoop() {
         }
     }
 }
-
-gameLoop();
+var board1 = [['o', 'o', 'o'], [4, 5, 6], [7, 8, 9]];
+console.log(isWinner('o', board1));
+// gameLoop();
