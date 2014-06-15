@@ -13,10 +13,7 @@ $(document).ready(function() {
 
     $('#stop-button').on('click', function() {
         clearInterval(interval);
-
-        $('#timer').children().each(function() {
-            $(this).text(0);
-        });
+        setDigits(0);
     });
 });
 
