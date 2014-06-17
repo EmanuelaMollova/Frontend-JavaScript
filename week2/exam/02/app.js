@@ -17,9 +17,12 @@ $(document).ready(function() {
     });
 });
 
+function getInputValue(selector) {
+    return parseInt($(selector).val(), 10) || 0;
+}
+
 function getSeconds() {
-    var minutes = parseInt($('#minutes').val(), 10) || 0;
-    return minutes * 60  + parseInt(($('#seconds').val() || 0), 10);
+    return getInputValue('#minutes') * 60 + getInputValue('#seconds');
 }
 
 function count(interval, current, step, end) {
