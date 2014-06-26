@@ -4,11 +4,21 @@ $(document).ready(function() {
     var interval;
 
     $('#count-up').on('click', function() {
-        interval = count(interval, 0, 1, getSeconds());
+        interval = count({
+            interval: interval,
+            currentSeconds: 0,
+            step: 1,
+            endWhenSecondsReached: getSeconds()
+        });
     });
 
     $('#count-down').on('click', function() {
-        interval = count(interval, getSeconds(), -1, 0);
+        interval = count({
+            interval: interval,
+            currentSeconds: getSeconds(),
+            step: -1,
+            endWhenSecondsReached: 0
+        });
     });
 
     $('#stop-button').on('click', function() {
@@ -25,18 +35,18 @@ function getSeconds() {
     return getInputValue('#minutes') * 60 + getInputValue('#seconds');
 }
 
-function count(interval, current, step, end) {
-    clearInterval(interval);
-    setDigits(current);
+function count(config) {
+    clearInterval(config.interval);
+    setDigits(config.currentSeconds);
 
     return setInterval(function() {
-        if(current === end) {
-            clearInterval(interval);
+        if(config.currentSeconds === config.endWhenSecondsReached) {
+            clearInterval(config.interval);
             return;
         }
 
-        current = current + step;
-        setDigits(current);
+        config.currentSeconds = config.currentSeconds + config.step;
+        setDigits(config.currentSeconds);
     }, 1000);
 }
 
